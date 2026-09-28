@@ -598,7 +598,7 @@
     (function () {
       var STORAGE = "hma-alumni-suggestions-mock-v1";
       var DEST = "alumnifeedback@hargrave.edu";
-      var REVIEW_LOCK = "BeMore-1909";
+      var REVIEW_LOCK = "e85f6740d4ee67a27c49834bc34c3fd929249e39da53c12ede09740e560ad539";
       var memory = [];
       var selectedId = null;
       var filter = "All";
@@ -857,19 +857,33 @@
         selectedId = null;
         renderBoard();
       });
+      function sha256(text) {
+        return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)).then(function (buf) {
+          return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+            return ("0" + b.toString(16)).slice(-2);
+          }).join("");
+        });
+      }
+
       document.getElementById("lock-form").addEventListener("submit", function (event) {
         event.preventDefault();
         var error = document.getElementById("lock-error");
         var given = document.getElementById("admin-password").value;
-        if (given !== REVIEW_LOCK) {
-          error.textContent = "That password does not open the inbox.";
+        var form = this;
+        sha256(given).then(function (hash) {
+          if (hash !== REVIEW_LOCK) {
+            error.textContent = "That password does not open the inbox.";
+            error.classList.add("show");
+            return;
+          }
+          error.classList.remove("show");
+          form.reset();
+          setUnlocked(true);
+          paintAdmin();
+        }).catch(function () {
+          error.textContent = "Could not check the password in this browser.";
           error.classList.add("show");
-          return;
-        }
-        error.classList.remove("show");
-        this.reset();
-        setUnlocked(true);
-        paintAdmin();
+        });
       });
       document.getElementById("sign-out").addEventListener("click", function () {
         setUnlocked(false);
