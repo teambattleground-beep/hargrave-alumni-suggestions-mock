@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hargrave Alumni Suggestions — Mockup</title>
+  <meta name="description" content="Mockup only. Not an official Hargrave site. Alumni suggestions are not sent.">
+  <link rel="icon" href="assets/hargrave-seal-color.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #ef6c00;
+      --orange-deep: #cc5c00;
+      --black: #000000;
+      --white: #ffffff;
+      --ink: #141414;
+      --muted: #5a5a5a;
+      --line: #e4e4e4;
+      --paper: #f4f4f4;
+      --display: "Raleway", Helvetica, Arial, sans-serif;
+      --body: "Open Sans", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    a { color: inherit; }
+    .mock-banner {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--orange);
+      color: var(--black);
+      text-align: center;
+      font-family: var(--display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.6rem 1rem;
+    }
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      height: 52px;
+      width: auto;
+      aspect-ratio: 2048 / 410;
+      display: block;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav button {
+      background: none;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      padding: 0.45rem 0.75rem;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .nav button[aria-current="page"] {
+      border-bottom-color: var(--orange);
+    }
+    .nav button:hover { color: var(--orange-deep); }
+    .menu-btn {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--black);
+      padding: 0.4rem 0.7rem;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .drawer {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: var(--white);
+      padding: 0.5rem 1.25rem 1rem;
+    }
+    .drawer[hidden] { display: none !important; }
+    .drawer button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 0.85rem 0;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      cursor: pointer;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .view[hidden],
+    #admin-lock[hidden],
+    #admin-inbox[hidden] { display: none !important; }
+    .hero {
+      background: var(--black);
+      color: var(--white);
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 4.5rem 1.25rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .eyebrow {
+      font-family: var(--display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin: 0 0 0.85rem;
+    }
+    h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+    h1 { font-size: 3rem; max-width: 14ch; }
+    .lede {
+      max-width: 38rem;
+      margin: 1.1rem 0 0;
+      font-size: 1.125rem;
+      color: #f2f2f2;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--orange);
+      background: var(--orange);
+      color: var(--black);
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 0.75rem 1.15rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--orange-deep); border-color: var(--orange-deep); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn-ghost:hover { background: var(--white); color: var(--black); }
+    .btn-ghost-dark {
+      background: transparent;
+      color: var(--black);
+      border-color: var(--black);
+    }
+    .btn-ghost-dark:hover { background: var(--black); color: var(--white); }
+    .seal {
+      width: 168px;
+      height: auto;
+      aspect-ratio: 610 / 604;
+      display: block;
+    }
+    .section { padding: 4.25rem 0; }
+    .section-paper { background: var(--paper); }
+    .section h2 { font-size: 1.9rem; margin-bottom: 0.6rem; }
+    .section-intro { max-width: 40rem; color: var(--muted); margin: 0 0 2rem; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .steps li { border-top: 3px solid var(--orange); padding-top: 1rem; }
+    .step-num {
+      font-family: var(--display);
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+    }
+    .steps h3 { font-size: 1.25rem; margin: 0.35rem 0 0.4rem; }
+    .steps p { margin: 0; color: var(--muted); }
+    .memo {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--orange);
+      padding: 1.35rem 1.4rem 1.2rem;
+      max-width: 40rem;
+    }
+    .memo-kicker {
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange-deep);
+      margin: 0 0 0.35rem;
+    }
+    .memo h3 { font-size: 1.35rem; margin-bottom: 0.85rem; }
+    .memo dl { margin: 0; display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.35rem 0.75rem; }
+    .memo dt { color: var(--muted); font-size: 0.85rem; }
+    .memo dd { margin: 0; }
+    .memo .body { margin: 1rem 0 0; }
+    .mock-tag {
+      display: inline-block;
+      margin-left: 0.4rem;
+      font-family: var(--display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--orange);
+      color: var(--orange-deep);
+      padding: 0.05rem 0.35rem;
+      vertical-align: middle;
+    }
+    .who {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .who ul { margin: 0.4rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+    .who li + li { margin-top: 0.35rem; }
+    .close-band {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 1.25rem;
+    }
+    .close-band p { margin: 0.35rem 0; font-family: var(--display); }
+    .close-band .tag { font-size: 2.1rem; font-weight: 600; letter-spacing: -0.02em; }
+    .close-band .sub { color: #d8d8d8; font-family: var(--body); font-size: 0.95rem; }
+    .panel {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .page-head { padding: 3rem 0 0.5rem; }
+    .page-head h1 { font-size: 2.4rem; max-width: none; }
+    .page-head p { color: var(--muted); max-width: 40rem; }
+    form { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    form[hidden] { display: none !important; }
+    label { display: grid; gap: 0.35rem; font-weight: 600; font-size: 0.92rem; }
+    .hint { font-weight: 400; color: var(--muted); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #c8c8c8;
+      background: var(--white);
+      padding: 0.7rem 0.75rem;
+      border-radius: 0;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--orange);
+      border-color: var(--orange);
+    }
+    textarea { min-height: 160px; resize: vertical; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-error {
+      display: none;
+      background: #fff4ec;
+      border-left: 4px solid var(--orange);
+      padding: 0.7rem 0.85rem;
+      font-size: 0.92rem;
+    }
+    .form-error.show { display: block; }
+    .thanks {
+      border-top: 3px solid var(--orange);
+      padding-top: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .thanks[hidden] { display: none !important; }
+    .thanks h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .thanks-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+    .filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1.25rem 0 1rem; }
+    .filters button {
+      background: var(--white);
+      border: 1px solid var(--black);
+      padding: 0.35rem 0.7rem;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .filters button[aria-pressed="true"] {
+      background: var(--black);
+      color: var(--white);
+    }
+    .board-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      padding-bottom: 3rem;
+    }
+    .suggestion-list { display: grid; gap: 0.55rem; }
+    .suggestion-btn {
+      text-align: left;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 4px solid transparent;
+      padding: 0.85rem 0.9rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    .suggestion-btn:hover { border-color: #bbb; }
+    .suggestion-btn[aria-current="true"] {
+      border-left-color: var(--orange);
+      border-color: var(--black);
+    }
+    .suggestion-btn strong { display: block; font-family: var(--display); font-weight: 600; }
+    .suggestion-btn span { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 0.15rem; }
+    .empty-note { color: var(--muted); padding: 1rem 0; }
+    .board-tools { margin: 0 0 2rem; }
+    .board-tools button {
+      background: none;
+      border: 0;
+      padding: 0;
+      color: var(--orange-deep);
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .footer {
+      background: var(--black);
+      color: #d0d0d0;
+      padding: 2rem 0 2.4rem;
+      font-size: 0.9rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer strong { color: var(--white); font-family: var(--display); font-weight: 600; }
+    .footer a { color: var(--white); }
+    @media (max-width: 800px) {
+      .menu-btn { display: inline-flex; }
+      .nav { display: none; }
+      .drawer:not([hidden]) { display: block; }
+      .hero-inner, .steps, .who, .board-layout, .row-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero-inner { padding: 2.75rem 1.25rem 2.5rem; }
+      h1 { font-size: 2.2rem; }
+      .seal { width: 120px; }
+      .section { padding: 2.75rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mock-banner">Mockup — not the live Hargrave site. Nothing you type is sent.</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="#home" data-view="home" aria-label="Hargrave alumni home">
+        <img class="logo" src="assets/hargrave-logo-color.png" alt="Hargrave. Be More.">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button type="button" data-view="home">Alumni</button>
+        <button type="button" data-view="suggest">Suggest</button>
+        <button type="button" data-view="admin">Administrator</button>
+      </nav>
+      <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="drawer">Menu</button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <button type="button" data-view="home">Alumni</button>
+      <button type="button" data-view="suggest">Suggest</button>
+      <button type="button" data-view="admin">Administrator</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="view-home" class="view">
+      <div class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Alumni · Chatham, Virginia · Since 1909</p>
+            <h1>A word for the Alumni Board.</h1>
+            <p class="lede">You were in the corps. Write a suggestion here. It is addressed to alumnifeedback@hargrave.edu. An administrator reads the inbox, then the Alumni Board group gets the note.</p>
+            <div class="hero-actions">
+              <button class="btn" type="button" data-view="suggest">Write a suggestion</button>
+            </div>
+          </div>
+          <img class="seal" src="assets/hargrave-seal-color.png" alt="Hargrave Military Academy seal. Mens sana in corpore sano.">
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="wrap">
+          <p class="eyebrow">How a suggestion moves</p>
+          <h2>One note. One inbox.</h2>
+          <p class="section-intro">Alumni write. The note is addressed to alumnifeedback@hargrave.edu. An administrator opens a locked inbox. Nothing here is a ticket.</p>
+          <ol class="steps">
+            <li>
+              <div class="step-num">01</div>
+              <h3>You write it</h3>
+              <p>Your name, your class year, and the suggestion. An email is optional, only if you want a reply.</p>
+            </li>
+            <li>
+              <div class="step-num">02</div>
+              <h3>It is addressed</h3>
+              <p>The live note goes to alumnifeedback@hargrave.edu. This mockup does not send mail. It keeps the note for the administrator inbox.</p>
+            </li>
+            <li>
+              <div class="step-num">03</div>
+              <h3>An administrator reads it</h3>
+              <p>The inbox is password protected. From there, the notes go on to the Alumni Board group.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-paper">
+        <div class="wrap">
+          <p class="eyebrow">What the inbox holds</p>
+          <h2>Addressed, not ticketed.</h2>
+          <p class="section-intro">This is the shape of a note in the administrator inbox. Sample only — not a real alumnus.</p>
+          <article class="memo">
+            <p class="memo-kicker">To alumnifeedback@hargrave.edu</p>
+            <h3>Mentoring <span class="mock-tag">Mock</span></h3>
+            <dl>
+              <dt>To</dt>
+              <dd>alumnifeedback@hargrave.edu</dd>
+              <dt>From</dt>
+              <dd>James Hale, Class of 1998</dd>
+              <dt>Reply</dt>
+              <dd>Not given</dd>
+            </dl>
+            <p class="body">A standing offer for juniors: one alumnus, one cadet, one semester. I would take a junior in my field if the board wants a simple way to match us.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap who">
+          <div>
+            <p class="eyebrow">Who this is for</p>
+            <h2>Alumni. Not admissions.</h2>
+            <p class="section-intro">A brotherhood built around shared experience does not end at graduation. This line is for men who have already worn the corps.</p>
+          </div>
+          <div>
+            <ul>
+              <li>For Hargrave alumni with a suggestion for the Alumni Board.</li>
+              <li>Not an application, a visit request, or a cadet form.</li>
+              <li>Not a place for cadet records, grades, or family accounts.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="close-band">
+        <p class="tag">Embrace the challenge. Be More.</p>
+        <p class="sub">Mens sana in corpore sano · Chatham, Virginia · Since 1909</p>
+      </div>
+    </section>
+
+    <section id="view-suggest" class="view" hidden>
+      <div class="wrap panel">
+        <div class="page-head">
+          <p class="eyebrow">Alumni suggestion</p>
+          <h1>Write a suggestion.</h1>
+          <p>It is addressed to alumnifeedback@hargrave.edu. This mockup does not send the email. An administrator can open it in the locked inbox.</p>
+        </div>
+        <p class="form-error" id="form-error" role="alert"></p>
+        <form id="suggest-form" novalidate>
+          <div class="row-2">
+            <label>Your name
+              <input id="name" name="name" autocomplete="name" required maxlength="80">
+            </label>
+            <label>Class year
+              <input id="year" name="year" inputmode="numeric" placeholder="YYYY" required maxlength="4">
+            </label>
+          </div>
+          <label>Email <span class="hint">optional — only if you want a reply</span>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="120">
+          </label>
+          <label>Topic
+            <select id="topic" name="topic" required>
+              <option>Mentoring</option>
+              <option>Reunions</option>
+              <option>Giving</option>
+              <option>The corps</option>
+              <option>Athletics</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Suggestion
+            <textarea id="body" name="body" required maxlength="2000" placeholder="What should the Alumni Board hear?"></textarea>
+          </label>
+          <div>
+            <button class="btn" type="submit">Submit suggestion</button>
+          </div>
+        </form>
+        <div class="thanks" id="thanks" hidden>
+          <h2>Received. Not emailed.</h2>
+          <p>This mockup did not send mail. The note is addressed to alumnifeedback@hargrave.edu and is waiting in the administrator inbox on this page.</p>
+          <div class="thanks-actions">
+            <button class="btn" type="button" id="see-inbox">Open administrator inbox</button>
+            <button class="btn btn-ghost-dark" type="button" id="write-another">Write another</button>
+          </div>
+        </div>
+      </div>
+      <div style="height: 3rem"></div>
+    </section>
+
+    <section id="view-admin" class="view" hidden>
+      <div class="wrap panel" id="admin-lock">
+        <div class="page-head">
+          <p class="eyebrow">Administrator</p>
+          <h1>Suggestion inbox</h1>
+          <p>Every note is addressed to alumnifeedback@hargrave.edu. This inbox is password protected. It is not a Hargrave network login.</p>
+        </div>
+        <p class="form-error" id="lock-error" role="alert"></p>
+        <form id="lock-form" novalidate>
+          <label>Password
+            <input id="admin-password" type="password" autocomplete="current-password" required>
+          </label>
+          <div><button class="btn" type="submit">Open inbox</button></div>
+        </form>
+      </div>
+      <div class="wrap" id="admin-inbox" hidden>
+        <div class="page-head">
+          <p class="eyebrow">alumnifeedback@hargrave.edu</p>
+          <h1>Inbox</h1>
+          <p>All suggestions in this browser. Each one is the note that would be sent to alumnifeedback@hargrave.edu, then on to the Alumni Board group. Samples are marked Mock.</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter by topic"></div>
+        <div class="board-layout">
+          <div>
+            <div class="suggestion-list" id="suggestion-list"></div>
+            <p class="empty-note" id="empty-note" hidden>Nothing in this topic.</p>
+          </div>
+          <article class="memo" id="detail" aria-live="polite"></article>
+        </div>
+        <p class="board-tools">
+          <button type="button" id="sign-out">Sign out</button>
+          <span> · </span>
+          <button type="button" id="clear-local">Remove suggestions added in this browser</button>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Hargrave Military Academy</strong><br>
+        200 Military Drive, Chatham, Virginia 24531<br>
+        <a href="tel:+18004322480">1 (800) 432-2480</a>
+      </div>
+      <div>
+        Mockup for review. Not an official Hargrave channel.<br>
+        Destination on the live version: alumnifeedback@hargrave.edu. This page does not send mail. No cadet records.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var STORAGE = "hma-alumni-suggestions-mock-v1";
+      var DEST = "alumnifeedback@hargrave.edu";
+      var REVIEW_LOCK = "BeMore-1909";
+      var memory = [];
+      var selectedId = null;
+      var filter = "All";
+      var topics = ["All", "Mentoring", "Reunions", "Giving", "The corps", "Athletics", "Something else"];
+      var seed = [
+        {
+          id: "seed-1",
+          name: "James Hale",
+          year: "1998",
+          email: "",
+          topic: "Mentoring",
+          body: "A standing offer for juniors: one alumnus, one cadet, one semester. I would take a junior in my field if the board wants a simple way to match us.",
+          local: false
+        },
+        {
+          id: "seed-2",
+          name: "Robert Keene",
+          year: "2014",
+          email: "",
+          topic: "Reunions",
+          body: "Young alumni will come back for a short homecoming, not a full weekend of formality. A Friday evening on the quad, class years 2010 through 2019, would be enough to start.",
+          local: false
+        },
+        {
+          id: "seed-3",
+          name: "Thomas Reed",
+          year: "1979",
+          email: "",
+          topic: "Giving",
+          body: "Give the class agents one clear project a year. Last year I was asked for three funds in the same month, and I gave to none of them.",
+          local: false
+        },
+        {
+          id: "seed-4",
+          name: "David Okonkwo",
+          year: "2007",
+          email: "",
+          topic: "The corps",
+          body: "When we visit, we want to hear from cadets, not only from a program. A short corps briefing at reunion — what the honor code looks like this year — would keep us useful instead of nostalgic.",
+          local: false
+        }
+      ];
+
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+
+      function loadLocal() {
+        try {
+          var raw = localStorage.getItem(STORAGE);
+          var parsed = raw ? JSON.parse(raw) : [];
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+          return memory;
+        }
+      }
+
+      function saveLocal(items) {
+        memory = items;
+        try { localStorage.setItem(STORAGE, JSON.stringify(items)); } catch (e) {}
+      }
+
+      function allItems() {
+        return loadLocal().concat(seed);
+      }
+
+      function closeDrawer() {
+        var drawer = document.getElementById("drawer");
+        var btn = document.getElementById("menu-btn");
+        drawer.hidden = true;
+        btn.setAttribute("aria-expanded", "false");
+      }
+
+      function unlocked() {
+        try { return sessionStorage.getItem("hma-admin-unlocked") === "1"; }
+        catch (e) { return false; }
+      }
+
+      function setUnlocked(on) {
+        try {
+          if (on) sessionStorage.setItem("hma-admin-unlocked", "1");
+          else sessionStorage.removeItem("hma-admin-unlocked");
+        } catch (e) {}
+      }
+
+      function paintAdmin() {
+        var open = unlocked();
+        document.getElementById("admin-lock").hidden = open;
+        document.getElementById("admin-inbox").hidden = !open;
+        if (open) renderBoard();
+      }
+
+      function show(view) {
+        ["home", "suggest", "admin"].forEach(function (name) {
+          document.getElementById("view-" + name).hidden = name !== view;
+        });
+        document.querySelectorAll("[data-view]").forEach(function (el) {
+          if (el.tagName === "A") return;
+          if (el.closest(".nav")) {
+            if (el.getAttribute("data-view") === view) el.setAttribute("aria-current", "page");
+            else el.removeAttribute("aria-current");
+          }
+        });
+        if (view === "admin") paintAdmin();
+        if (location.hash !== "#" + view) {
+          history.replaceState(null, "", "#" + view);
+        }
+        closeDrawer();
+        window.scrollTo(0, 0);
+      }
+
+      function memoHtml(item) {
+        var tag = item.local ? "Added here" : "Mock";
+        var reply = item.email ? esc(item.email) : "Not given";
+        return (
+          '<p class="memo-kicker">To ' + esc(DEST) + "</p>" +
+          "<h3>" + esc(item.topic) + ' <span class="mock-tag">' + tag + "</span></h3>" +
+          "<dl><dt>To</dt><dd>" + esc(DEST) + "</dd>" +
+          "<dt>From</dt><dd>" + esc(item.name) + ", Class of " + esc(item.year) + "</dd>" +
+          "<dt>Reply</dt><dd>" + reply + "</dd></dl>" +
+          '<p class="body">' + esc(item.body) + "</p>"
+        );
+      }
+
+      function renderFilters() {
+        var host = document.getElementById("filters");
+        host.innerHTML = topics.map(function (topic) {
+          var pressed = topic === filter ? "true" : "false";
+          return '<button type="button" data-filter="' + esc(topic) + '" aria-pressed="' + pressed + '">' + esc(topic) + "</button>";
+        }).join("");
+      }
+
+      function renderBoard() {
+        var items = allItems().filter(function (item) {
+          return filter === "All" || item.topic === filter;
+        });
+        var list = document.getElementById("suggestion-list");
+        var empty = document.getElementById("empty-note");
+        var detail = document.getElementById("detail");
+        if (!items.length) {
+          list.innerHTML = "";
+          empty.hidden = false;
+          detail.innerHTML = "<p class='memo-kicker'>To " + esc(DEST) + "</p><h3>Nothing in this topic.</h3><p class='body'>Choose another topic, or write a suggestion.</p>";
+          return;
+        }
+        empty.hidden = true;
+        if (!selectedId || !items.some(function (item) { return item.id === selectedId; })) {
+          selectedId = items[0].id;
+        }
+        list.innerHTML = items.map(function (item) {
+          var current = item.id === selectedId ? "true" : "false";
+          var tag = item.local ? "Added here" : "Mock";
+          return (
+            '<button type="button" class="suggestion-btn" data-id="' + esc(item.id) + '" aria-current="' + current + '">' +
+            "<strong>" + esc(item.topic) + "</strong>" +
+            "<span>" + esc(item.name) + " · Class of " + esc(item.year) + " · " + tag + "</span>" +
+            "</button>"
+          );
+        }).join("");
+        var chosen = items.filter(function (item) { return item.id === selectedId; })[0];
+        detail.innerHTML = memoHtml(chosen);
+      }
+
+      document.getElementById("menu-btn").addEventListener("click", function () {
+        var drawer = document.getElementById("drawer");
+        var open = drawer.hidden;
+        drawer.hidden = !open;
+        this.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      document.body.addEventListener("click", function (event) {
+        var viewBtn = event.target.closest("[data-view]");
+        if (viewBtn && viewBtn.tagName !== "A") {
+          show(viewBtn.getAttribute("data-view"));
+          return;
+        }
+        if (viewBtn && viewBtn.tagName === "A") {
+          event.preventDefault();
+          show("home");
+          return;
+        }
+        var filterBtn = event.target.closest("[data-filter]");
+        if (filterBtn) {
+          filter = filterBtn.getAttribute("data-filter");
+          renderFilters();
+          renderBoard();
+          return;
+        }
+        var row = event.target.closest("[data-id]");
+        if (row) {
+          selectedId = row.getAttribute("data-id");
+          renderBoard();
+        }
+      });
+
+      document.getElementById("suggest-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value.trim();
+        var year = document.getElementById("year").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var topic = document.getElementById("topic").value;
+        var body = document.getElementById("body").value.trim();
+        var error = document.getElementById("form-error");
+        var yearNum = Number(year);
+        if (!name || !year || !body) {
+          error.textContent = "Name, class year, and a suggestion are required.";
+          error.classList.add("show");
+          return;
+        }
+        if (!/^\d{4}$/.test(year) || yearNum < 1910 || yearNum > 2026) {
+          error.textContent = "Class year should be a four-digit year, 1910 through 2026.";
+          error.classList.add("show");
+          return;
+        }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          error.textContent = "That email does not look complete. Leave it blank if you do not want a reply.";
+          error.classList.add("show");
+          return;
+        }
+        if (body.length < 12) {
+          error.textContent = "Write the suggestion in a sentence or two so the board has something to read.";
+          error.classList.add("show");
+          return;
+        }
+        error.classList.remove("show");
+        var item = {
+          id: "local-" + Date.now(),
+          name: name,
+          year: year,
+          email: email,
+          topic: topic,
+          body: body,
+          local: true
+        };
+        var locals = loadLocal();
+        locals.unshift(item);
+        saveLocal(locals);
+        selectedId = item.id;
+        filter = "All";
+        this.hidden = true;
+        document.getElementById("thanks").hidden = false;
+      });
+
+      document.getElementById("see-inbox").addEventListener("click", function () {
+        show("admin");
+      });
+      document.getElementById("write-another").addEventListener("click", function () {
+        document.getElementById("suggest-form").reset();
+        document.getElementById("suggest-form").hidden = false;
+        document.getElementById("thanks").hidden = true;
+      });
+      document.getElementById("clear-local").addEventListener("click", function () {
+        saveLocal([]);
+        selectedId = null;
+        renderBoard();
+      });
+      document.getElementById("lock-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var error = document.getElementById("lock-error");
+        var given = document.getElementById("admin-password").value;
+        if (given !== REVIEW_LOCK) {
+          error.textContent = "That password does not open the inbox.";
+          error.classList.add("show");
+          return;
+        }
+        error.classList.remove("show");
+        this.reset();
+        setUnlocked(true);
+        paintAdmin();
+      });
+      document.getElementById("sign-out").addEventListener("click", function () {
+        setUnlocked(false);
+        paintAdmin();
+      });
+
+      renderFilters();
+      var start = (location.hash || "#home").replace("#", "");
+      if (start === "board") start = "admin";
+      if (["home", "suggest", "admin"].indexOf(start) === -1) start = "home";
+      show(start);
+    })();
+  </script>
+</body>
+</html>
